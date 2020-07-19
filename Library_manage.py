@@ -1,9 +1,11 @@
 import os
 class Library_x:   
     def delete_book(self, book_contents):
-        for i in range(0, len(book_contents), 1):
-            print(i)
+        i = 0
+        while i < len(book_contents):
             print(book_contents[i])
+            i += 1
+
         delete_num = int(input("삭제할 책의 번호를 고르세요(0 = 취소) : "))
         if delete_num == 0:
             print("취소") #취소
@@ -20,15 +22,16 @@ class Library_x:
         book_contents.pop(delete_num)
         print("삭제 완료")
 
-    def find_book_name(self,matching_list):
-        d_book_info = str(input("찾을 책의 정보를 입력하세요(아무 정보나 입력) : "))
-        matching = self.find_book_book(d_book_info,matching_list)
-        return matching
-
     def find_book_kind(self,book_contents):
         d_book_info = str(input("찾을 책의 장르를 입력하세요 : "))
         matching = self.find_book_book(d_book_info,book_contents)
         return matching
+
+    def find_book_author(self,book_contents):
+        d_book_info = str(input("찾을 책의 저자를 입력하세요 : "))
+        matching = self.find_book_book(d_book_info,book_contents)
+        return matching
+
 
     def find_book_book(self, find_text, book_contents):
         matching = []
@@ -64,15 +67,15 @@ class book_b:
            book_contents.append(book_name+'\n')
            print("추가완료")
            for i in range (len(book_contents)):
-               print (i)
-               print (book_contents[i])
+               print (i, book_contents[i])
         else:
             print("취소")
 
     def fixmenu(self,book_contents):
-        for i in range(0, len(book_contents), 1):
-            print(i)
+        i = 0
+        while i < len(book_contents):
             print(book_contents[i])
+            i += 1
         a = int(input("수정할 책의 번호를 고르세요 : "))
         self.fix_book(book_contents, a)
         return (book_contents)

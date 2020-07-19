@@ -25,10 +25,11 @@ class user1:
             if len(matching_list) == 0:
                 print("일치하는 장르의 책이 없습니다.")
             else:
-                for i in range(0, len(matching_list), 1):
-                    print(i)
-                    print(matching_list[i]) #순서대로 출력
-            find_book = self.Library_class.find_book_name(matching_list)
+                i=0
+                while i < len(matching_list):
+                    print(matching_list[i])
+                    i+=1
+            find_book = self.Library_class.find_book_author(matching_list)
             if len(find_book) == 0: #일치하는 길이가 0일때, 일치x
                 print("일치하는 책이 없습니다.")
             else:
