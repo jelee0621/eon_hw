@@ -22,13 +22,13 @@ class TUSHUGUAN:
         print("삭제 완료")
 
 
-    def find_book_kind(self,book_List):
-        d_book_info = str(input("찾을 책의 장르를 입력하세요 : "))
+    def find_book_genere(self,book_List):
+        d_book_info = str(input("write down genere of the book : "))
         matching = self.find_book_book(d_book_info,book_List)
         return matching
 
     def find_book_author(self,book_contents):
-        d_book_info = str(input("찾을 책의 저자를 입력하세요 : "))
+        d_book_info = str(input("write down author of the book : "))
         matching = self.find_book_book(d_book_info,book_contents)
         return matching        
 
@@ -38,7 +38,7 @@ class TUSHUGUAN:
             if find_text in s:
                 matching.append(s)
         if len(matching) == 0:
-            print("검색 실패")
+            print("fail")
             return matching
         else:
             return matching
@@ -65,8 +65,7 @@ class book_b:
            book_List.append(book_name+'\n')
            print("추가완료")
            for i in range (len(book_List)):
-               print (i)
-               print (book_List[i])
+               print (i, book_List[i])
 
         else:
             print("취소")

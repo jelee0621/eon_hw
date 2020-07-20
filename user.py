@@ -22,7 +22,7 @@ class user1:
             self.menu(book_List)
 
         elif selected_menu == 2:
-            matching_list = self.Library_class.find_book_kind(book_List)
+            matching_list = self.Library_class.find_book_genere(book_List)
             if len(matching_list) == 0:
                 print("일치하는 장르의 책이 없습니다.")
             else:
